@@ -1,0 +1,83 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profile",
+      "description": "Stores user information and roles.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The user's unique ID." },
+        "displayName": { "type": "string", "description": "The user's display name." },
+        "email": { "type": "string", "format": "email", "description": "The user's email address." },
+        "role": { "type": "string", "enum": ["user", "admin"], "description": "The user's role." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the user profile was created." }
+      },
+      "required": ["uid", "displayName", "email", "role", "createdAt"]
+    },
+    "testResults": {
+      "title": "IQ Test Result",
+      "description": "Stores the results of an IQ test for a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The ID of the user who took the test." },
+        "iq": { "type": "number", "description": "The IQ score achieved." },
+        "percentile": { "type": "number", "description": "The percentile rank." },
+        "category": { "type": "string", "description": "The IQ category (e.g., Gifted)." },
+        "mode": { "type": "string", "description": "The test mode (quick, classical, culturefair)." },
+        "correct": { "type": "number", "description": "Number of correct answers." },
+        "total": { "type": "number", "description": "Total number of questions." },
+        "domainScores": { "type": "object", "description": "Scores per cognitive domain." },
+        "theta": { "type": "number", "description": "IRT theta value if applicable." },
+        "ci": { "type": "object", "description": "Confidence interval if applicable." },
+        "timestamp": { "type": "string", "format": "date-time", "description": "When the test was completed." }
+      },
+      "required": ["userId", "iq", "percentile", "category", "mode", "correct", "total", "timestamp"]
+    },
+    "questions": {
+      "title": "IQ Test Question",
+      "description": "Stores a single IQ test question.",
+      "type": "object",
+      "properties": {
+        "question": { "type": "string", "description": "The question text." },
+        "options": { "type": "array", "items": { "type": "string" }, "description": "The answer options." },
+        "correctAnswer": { "type": "string", "description": "The correct answer." },
+        "difficulty": { "type": "string", "enum": ["beginner", "intermediate", "advanced"], "description": "Difficulty level." },
+        "category": { "type": "string", "description": "Question category." },
+        "ageGroup": { "type": "string", "description": "Target age group." },
+        "usedByUsers": { "type": "array", "items": { "type": "string" }, "description": "Array of user IDs who have seen this question." }
+      },
+      "required": ["question", "options", "correctAnswer", "difficulty", "category"]
+    },
+    "blogs": {
+      "title": "Blog Post",
+      "description": "Stores a blog post.",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "description": "The blog post title." },
+        "slug": { "type": "string", "description": "The blog post URL slug." },
+        "content": { "type": "string", "description": "The blog post content in Markdown." },
+        "metaDescription": { "type": "string", "description": "SEO meta description." },
+        "keywords": { "type": "array", "items": { "type": "string" }, "description": "SEO keywords." },
+        "createdAt": { "type": "string", "format": "date-time", "description": "When the post was created." }
+      },
+      "required": ["title", "slug", "content", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "users",
+      "description": "User profile document."
+    },
+    "/testResults/{resultId}": {
+      "schema": "testResults",
+      "description": "Individual test result document."
+    },
+    "/questions/{questionId}": {
+      "schema": "questions",
+      "description": "IQ test question document."
+    },
+    "/blogs/{slug}": {
+      "schema": "blogs",
+      "description": "Blog post document."
+    }
+  }
+}

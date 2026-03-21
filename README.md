@@ -1,11 +1,59 @@
-<div align="center">
+# IQTest Pro — Free IQ Test Online
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+The world's most accurate free IQ test online. Age-normalized scoring, 5 cognitive domains, instant results, and free certificate. No registration required.
 
-  <h1>Built with AI Studio</h2>
+## Features
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+- **Age-Normalized Scoring:** Accurate results based on your age group.
+- **5 Cognitive Domains:** Measures Verbal, Numeric, Logic, Spatial, and Pattern recognition.
+- **Instant Results:** Get your IQ score and percentile immediately after completion.
+- **Free Certificate:** Download a professional PDF certificate of your achievement.
+- **Adaptive Testing:** Uses Item Response Theory (IRT) for precise measurement.
+- **Guest Access:** Take the test without mandatory registration.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+## Tech Stack
 
-</div>
+- **Frontend:** React, TypeScript, Tailwind CSS, Framer Motion
+- **Backend:** Express (Node.js)
+- **Database:** Firebase Firestore
+- **Authentication:** Firebase Authentication
+- **Charts:** Recharts
+- **PDF Generation:** jsPDF, html2canvas
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v18+)
+- npm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd iqtest-pro
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Set up environment variables:
+   Create a `.env` file based on `.env.example` and add your Firebase configuration and other necessary keys.
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deployment
+
+This application is designed to be deployed on Google Cloud Run or any other containerized platform.
+
+## License
+
+MIT License
