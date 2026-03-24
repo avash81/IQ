@@ -8,7 +8,7 @@ import { updateTheta, selectNextQuestion, thetaToIQ, computeConfidenceInterval }
 import { trackEvent } from '../lib/analytics';
 import { useAuth } from '../context/AuthContext';
 import { getQuestions, markQuestionAsUsed } from '../lib/db';
-import LevelSelect from './LevelSelect';
+import LevelSelect from '../components/LevelSelect';
 
 const TEST_MODES = {
   quick: {

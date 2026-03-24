@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Brain, Zap, Globe, Award, Target, BarChart3, ChevronRight, CheckCircle2, Star, Plus, Minus } from 'lucide-react';
 import { motion } from 'motion/react';
-import { SEO } from './seo/SEO';
-import { FAQSchema } from './seo/StructuredData';
+import { SEO } from '../components/seo/SEO';
+import { FAQSchema } from '../components/seo/StructuredData';
 
 const TEST_TYPES = [
   {

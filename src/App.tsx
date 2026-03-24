@@ -9,10 +9,10 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext.tsx';
 import Navbar from './components/Navbar.tsx';
 import Footer from './components/Footer.tsx';
-import Landing from './components/Landing.tsx';
-import Onboarding from './components/Onboarding.tsx';
-import TestEngine from './components/TestEngine.tsx';
-import Results from './components/Results.tsx';
+import Landing from './pages/Landing.tsx';
+import Onboarding from './pages/Onboarding.tsx';
+import TestEngine from './pages/TestEngine.tsx';
+import Results from './pages/Results.tsx';
 import { Brain } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
